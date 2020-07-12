@@ -1,8 +1,15 @@
+image: node:latest
+
 stages:
 - dev
+
 dev:
   stage: dev
   script:
   - npm install yarn
   - yarn install
   - next build
+
+cache:
+  path:
+    - node_modules/
