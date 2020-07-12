@@ -11,5 +11,5 @@ dev:
   - next build
 
 cache:
-  path:
+  paths:
     - node_modules/
