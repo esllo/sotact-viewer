@@ -1,0 +1,7 @@
+stages:
+- dev
+dev:
+  stage: dev
+  script:
+  - yarn install
+  - next build
