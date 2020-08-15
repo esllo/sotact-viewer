@@ -1,0 +1,9 @@
+image: node:latest
+
+stages:
+- dev
+
+dev:
+  stage: dev
+  script:
+  - echo "nothing to build"
