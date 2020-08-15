@@ -17,9 +17,11 @@ function createElem(t) {
   return document.createElement(t);
 }
 function findItem(l, i) {
-  let lh = i.substr(6).split('-');
+  let lh = i.substr(i.indexOf('-') + 1).split('-');
   let it = l;
-  for (const h of lh) it = it.children[h];
+  for (const h of lh) {
+    it = it.children[h];
+  }
   return it;
 }
 var ETA = document.createElement('textarea');
@@ -51,8 +53,12 @@ function getFormattedDate() {
     .toString()
     .substr(2);
 }
-function getDateAsHex(){
+function getDateAsHex() {
   let d = new Date();
-  return (parseInt(df.map((e) => ((e = d[e]()) < 10 ? '0' + e : e)).join('')) +
-    100000000).toString(32).substr(2);
+  return (
+    parseInt(df.map((e) => ((e = d[e]()) < 10 ? '0' + e : e)).join('')) +
+    100000000
+  )
+    .toString(32)
+    .substr(2);
 }

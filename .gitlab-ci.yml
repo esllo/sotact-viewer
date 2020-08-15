@@ -6,10 +6,4 @@ stages:
 dev:
   stage: dev
   script:
-  - npm install yarn
-  - yarn install
-  - next build
-
-cache:
-  paths:
-    - node_modules/
+  - echo "nothing to build"

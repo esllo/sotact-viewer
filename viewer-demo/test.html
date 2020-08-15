@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .taw-cut{
+      width:100%
+    }
+    #container{
+      width: 100%;
+    }
+    @media (min-width: 720px){
+      #container{
+        width: 720px;
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="log"></div>
+  <div id="container"></div>
+  <script>
+    document.getElementById('log').textContent = window.innerWidth + '';
+    const log = console.log;
+    // console.error = console.log = (e) => {
+    //   log(e);
+    //   document.getElementById('log').textContent += '\n'+e.toString();
+    // }
+  </script>
+  <script src="https://unpkg.com/konva@7.0.3/konva.min.js"></script>
+  <script src="../src/util.js"></script>
+  <script src="../src/data-parser.js"></script>
+  <script src="../src/lz-string.js"></script>
+  <script src="../src/taw.js"></script>
+  <script>
+    TAW.container('#container');
+    parser.baseUrl('../res/data/');
+    let a = ['http://172.30.1.47:5500/res/data/single/4e61fk86o-data.json'];
+    a = [...a, ...a, ...a];
+    a = [...a, ...a, ...a];
+    TAW.loadCuts(a).then(() => {
+      console.log('all cuts loaded');
+    });
+  </script>
+</body>
+
+</html>
