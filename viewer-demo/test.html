@@ -10,14 +10,17 @@
       margin: 0;
       padding: 0;
     }
-    .taw-cut{
-      width:100%
+
+    .taw-cut {
+      width: 100%
     }
-    #container{
+
+    #container {
       width: 100%;
     }
-    @media (min-width: 720px){
-      #container{
+
+    @media (min-width: 720px) {
+      #container {
         width: 720px;
         margin: 0 auto;
       }
@@ -27,7 +30,9 @@
 
 <body>
   <div id="log"></div>
+  <div id="webtoon_start" style="width:100%; height: 100vh;"></div>
   <div id="container"></div>
+  <div id="webtoon_end" style="width:100%; height: 100vh;"></div>
   <script src="https://unpkg.com/konva@7.0.3/konva.min.js"></script>
   <script src="../src/util.js"></script>
   <script src="../src/data-parser.js"></script>
@@ -36,9 +41,8 @@
   <script>
     TAW.container('#container');
     parser.baseUrl('../res/data/');
-    let a = ['http://172.30.1.47:5500/res/data/single/4e61fk86o-data.json'];
-    a = [...a, ...a, ...a];
-    a = [...a, ...a, ...a];
+    let a = ['space_1/4e741fhs4-data.json', 'space_2/4e74296m8-data.json', 'space_3/4e742uoq8-data.json'];
+    TAW.baseUrl('http://59.7.180.135:5500/res/data/');
     TAW.loadCuts(a).then(() => {
       console.log('all cuts loaded');
     });
