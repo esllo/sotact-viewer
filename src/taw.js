@@ -13,13 +13,13 @@ const TAW = (() => {
     var count = 0;
     const width = parseInt(computedStyle(data.cntr).width);
     list.map((e, i) => {
+      const c = createElem('div');
+      c.id = 'taw-cut-' + i;
+      c.classList = 'taw-cut';
+      data.cntr.appendChild(c);
       fetch(data.baseUrl + e)
         .then((r) => r.json())
         .then((j) => {
-          const c = createElem('div');
-          c.id = 'taw-cut-' + i;
-          c.classList = 'taw-cut';
-          data.cntr.appendChild(c);
           const parsed = parser.parse(c, j, width);
           console.log(parsed);
           parsed.waitForLoad(() => {
