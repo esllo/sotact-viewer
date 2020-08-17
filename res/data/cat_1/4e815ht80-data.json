@@ -1,0 +1,295 @@
+{
+  "map": [
+    {
+      "path": "cat_1/4e815ht80-0.png",
+      "attrs": {
+        "x": 360,
+        "y": 590,
+        "width": 720,
+        "height": 1184,
+        "visible": true,
+        "id": "",
+        "name": "배경",
+        "opacity": 1,
+        "scale": { "x": 1, "y": 1 },
+        "rotation": 0,
+        "offset": { "x": 360, "y": 592 }
+      }
+    },
+    {
+      "path": "cat_1/4e815ht80-1.png",
+      "attrs": {
+        "x": 355.5,
+        "y": 309,
+        "width": 227,
+        "height": 412,
+        "visible": true,
+        "id": "",
+        "name": "까만냥이",
+        "opacity": 1,
+        "scale": { "x": 1, "y": 1 },
+        "rotation": 0,
+        "offset": { "x": 113.5, "y": 206 }
+      }
+    },
+    {
+      "path": "cat_1/4e815ht80-2.png",
+      "attrs": {
+        "x": 328,
+        "y": 364,
+        "width": 116,
+        "height": 78,
+        "visible": true,
+        "id": "",
+        "name": "코 발바닥",
+        "opacity": 1,
+        "scale": { "x": 1, "y": 1 },
+        "rotation": 0,
+        "offset": { "x": 58, "y": 39 }
+      }
+    },
+    {
+      "path": "cat_1/4e815ht80-3.png",
+      "attrs": {
+        "x": 389,
+        "y": 460.5,
+        "width": 126,
+        "height": 51,
+        "visible": true,
+        "id": "",
+        "name": "귀색깔",
+        "opacity": 1,
+        "scale": { "x": 1, "y": 1 },
+        "rotation": 0,
+        "offset": { "x": 63, "y": 25.5 }
+      }
+    },
+    {
+      "path": "cat_1/4e815ht80-4.png",
+      "attrs": {
+        "x": 383.5,
+        "y": 408,
+        "width": 165,
+        "height": 78,
+        "visible": true,
+        "id": "",
+        "name": "볼터치",
+        "opacity": 1,
+        "scale": { "x": 1, "y": 1 },
+        "rotation": 0,
+        "offset": { "x": 82.5, "y": 39 }
+      }
+    },
+    {
+      "path": "cat_1/4e815ht80-5.png",
+      "attrs": {
+        "x": 353.5,
+        "y": 311.5,
+        "width": 247,
+        "height": 429,
+        "visible": true,
+        "id": "",
+        "name": "고양이테두리",
+        "opacity": 1,
+        "scale": { "x": 1, "y": 1 },
+        "rotation": 0,
+        "offset": { "x": 123.5, "y": 214.5 }
+      }
+    },
+    {
+      "path": "cat_1/4e815ht80-6.png",
+      "attrs": {
+        "x": 380,
+        "y": 415,
+        "width": 102,
+        "height": 30,
+        "visible": true,
+        "id": "",
+        "name": "눈 감은 상태",
+        "opacity": 1,
+        "scale": { "x": 1, "y": 1 },
+        "rotation": 0,
+        "offset": { "x": 51, "y": 15 }
+      }
+    },
+    {
+      "path": "cat_1/4e815ht80-7.png",
+      "attrs": {
+        "x": 382.5,
+        "y": 421.5,
+        "width": 117,
+        "height": 51,
+        "visible": true,
+        "id": "",
+        "name": "눈 뜬 상태",
+        "opacity": 1,
+        "scale": { "x": 1, "y": 1 },
+        "rotation": 0,
+        "offset": { "x": 58.5, "y": 25.5 }
+      }
+    },
+    {
+      "path": "cat_1/4e815ht80-8.png",
+      "attrs": {
+        "x": 236,
+        "y": 969,
+        "width": 149,
+        "height": 101,
+        "visible": true,
+        "id": "",
+        "name": "오뎅꼬치 막대",
+        "opacity": 0,
+        "scale": { "x": 1, "y": 1 },
+        "rotation": 0,
+        "offset": { "x": 74.5, "y": 50.5 }
+      }
+    },
+    {
+      "path": "cat_1/4e815ht80-9.png",
+      "attrs": {
+        "x": 449,
+        "y": 842,
+        "width": 310,
+        "height": 192,
+        "visible": true,
+        "id": "",
+        "name": "오뎅꼬치-중",
+        "opacity": 0,
+        "scale": { "x": 1, "y": 1 },
+        "rotation": 0,
+        "offset": { "x": 155, "y": 96 }
+      }
+    },
+    {
+      "path": "cat_1/4e815ht80-10.png",
+      "attrs": {
+        "x": 395,
+        "y": 808,
+        "width": 217,
+        "height": 263,
+        "visible": true,
+        "id": "",
+        "name": "오뎅꼬치-상",
+        "opacity": 0,
+        "scale": { "x": 1, "y": 1 },
+        "rotation": 0,
+        "offset": { "x": 108.5, "y": 131.5 }
+      }
+    },
+    {
+      "path": "cat_1/4e815ht80-11.png",
+      "attrs": {
+        "x": 454,
+        "y": 884,
+        "width": 311,
+        "height": 116,
+        "visible": true,
+        "id": "",
+        "name": "오뎅꼬치-하",
+        "opacity": 0,
+        "scale": { "x": 1, "y": 1 },
+        "rotation": 0,
+        "offset": { "x": 155.5, "y": 58 }
+      }
+    }
+  ],
+  "flow": [
+    {
+      "src": "layer-0-9",
+      "time": [0, 500, 550, 600, 650, 700, 750, 900],
+      "data": [
+        { "x": 449, "y": 842, "rotation": 0, "opacity": 0 },
+        { "x": 449, "y": 842, "rotation": 0, "opacity": 0 },
+        { "x": 449, "y": 842, "rotation": 0, "opacity": 1 },
+        { "x": 449, "y": 842, "rotation": 0, "opacity": 0 },
+        { "x": 449, "y": 842, "rotation": 0, "opacity": 1 },
+        { "x": 449, "y": 842, "rotation": 0, "opacity": 0 },
+        { "x": 449, "y": 842, "rotation": 0, "opacity": 1 },
+        { "x": 449, "y": 842, "rotation": 0, "opacity": 0 }
+      ],
+      "max": 7,
+      "index": 0,
+      "current": { "x": 449, "y": 842, "rotation": 0, "opacity": 0 }
+    },
+    {
+      "src": "layer-0-10",
+      "time": [0, 500, 550, 600, 650, 700, 750],
+      "data": [
+        { "x": 395, "y": 808, "rotation": 0, "opacity": 0 },
+        { "x": 395, "y": 808, "rotation": 0, "opacity": 0 },
+        { "x": 395, "y": 808, "rotation": 0, "opacity": 0 },
+        { "x": 395, "y": 808, "rotation": 0, "opacity": 1 },
+        { "x": 395, "y": 808, "rotation": 0, "opacity": 0 },
+        { "x": 395, "y": 808, "rotation": 0, "opacity": 0 },
+        { "x": 395, "y": 808, "rotation": 0, "opacity": 0 }
+      ],
+      "max": 7,
+      "index": 0,
+      "current": { "x": 395, "y": 808, "rotation": 0, "opacity": 0 }
+    },
+    {
+      "src": "layer-0-11",
+      "time": [0, 500, 550, 600, 650, 700, 750, 800],
+      "data": [
+        { "x": 454, "y": 884, "rotation": 0, "opacity": 0 },
+        { "x": 454, "y": 884, "rotation": 0, "opacity": 0 },
+        { "x": 454, "y": 884, "rotation": 0, "opacity": 0 },
+        { "x": 454, "y": 884, "rotation": 0, "opacity": 0 },
+        { "x": 454, "y": 884, "rotation": 0, "opacity": 0 },
+        { "x": 454, "y": 884, "rotation": 0, "opacity": 1 },
+        { "x": 454, "y": 884, "rotation": 0, "opacity": 0 },
+        { "x": 454, "y": 884, "rotation": 0, "opacity": 0 }
+      ],
+      "max": 6,
+      "index": 0,
+      "current": { "x": 454, "y": 884, "rotation": 0, "opacity": 0 }
+    },
+    {
+      "src": "layer-0-8",
+      "time": [0, 500, 600, 800, 900],
+      "data": [
+        { "x": 236, "y": 969, "rotation": 0, "opacity": 0 },
+        { "x": 236, "y": 969, "rotation": 0, "opacity": 0 },
+        { "x": 236, "y": 969, "rotation": 0, "opacity": 1 },
+        { "x": 236, "y": 969, "rotation": 0, "opacity": 1 },
+        { "x": 236, "y": 969, "rotation": 0, "opacity": 0 }
+      ],
+      "max": 3,
+      "index": 0,
+      "current": { "x": 236, "y": 969, "rotation": 0, "opacity": 0 }
+    },
+    {
+      "src": "layer-0-4",
+      "time": [0, 100, 200, 251, 300, 400, 499, 601],
+      "data": [
+        { "x": 383.5, "y": 408, "rotation": 0, "opacity": 1 },
+        { "x": 384, "y": 408, "rotation": 0, "opacity": 0.3 },
+        { "x": 384, "y": 408, "rotation": 0, "opacity": 1 },
+        { "x": 384, "y": 408, "rotation": 0, "opacity": 0.3 },
+        { "x": 384, "y": 408, "rotation": 0, "opacity": 0.3 },
+        { "x": 384, "y": 408, "rotation": 0, "opacity": 1 },
+        { "x": 384, "y": 408, "rotation": 0, "opacity": 0.3 },
+        { "x": 384, "y": 408, "rotation": 0, "opacity": 1 }
+      ],
+      "max": 8,
+      "index": 0,
+      "current": { "x": 383.5, "y": 408, "rotation": 0, "opacity": 1 }
+    },
+    {
+      "src": "layer-0-7",
+      "time": [0, 150, 250, 450, 550],
+      "data": [
+        { "x": 383, "y": 422, "rotation": 0, "opacity": 1 },
+        { "x": 383, "y": 422, "rotation": 0, "opacity": 1 },
+        { "x": 383, "y": 422, "rotation": 0, "opacity": 0 },
+        { "x": 383, "y": 422, "rotation": 0, "opacity": 0 },
+        { "x": 383, "y": 422, "rotation": 0, "opacity": 1 }
+      ],
+      "max": 6,
+      "index": 0,
+      "current": { "x": 382.5, "y": 421.5, "rotation": 0, "opacity": 1 }
+    }
+  ],
+  "size": { "width": 720, "height": 1184 },
+  "name": "cat_1"
+}
