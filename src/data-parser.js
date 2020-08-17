@@ -34,8 +34,9 @@ const parser = (() => {
     const waitForLoad = async function (cb) {
       while (total != loaded) await sleep(50);
       for (const f of flow) {
-        const i = parseInt(f.src.substr(f.src.lastIndexOf('-')+1));
-        f.obj = stage.find('#i'+i);
+        const i = parseInt(f.src.substr(f.src.lastIndexOf('-') + 1));
+        f.obj = stage.find('#i' + i);
+        f.max = Math.min(f.time.length, f.data.length);
 
       };
       cb({
