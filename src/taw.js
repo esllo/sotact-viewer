@@ -10,30 +10,39 @@ const TAW = (() => {
   function loadCuts(list) {
     data.cuts = [];
     const total = list.length;
-    var count = 0;
+    var count = 0, dist = 0;
     const width = parseInt(computedStyle(data.cntr).width);
     list.map((e, i) => {
-      fetch(data.baseUrl + e)
-        .then((r) => r.json())
-        .then((j) => {
-          const c = createElem('div');
-          c.id = 'taw-cut-' + i;
-          c.classList = 'taw-cut';
-          data.cntr.appendChild(c);
-          const parsed = parser.parse(c, j, width);
-          console.log(parsed);
-          parsed.waitForLoad(() => {
-            // pin
-            const cut = Cut(parsed);
-            cut.container = c;
-            data.cuts[i] = cut;
-            count++;
+      const c = createElem('div');
+      if (e.endsWith('.json')) {
+        const ii = i - dist;
+        c.id = 'taw-cut-' + ii;
+        c.className = 'taw-cut';
+        data.cntr.appendChild(c);
+        fetch(data.baseUrl + e)
+          .then((r) => r.json())
+          .then((j) => {
+            const parsed = parser.parse(c, j, width);
+            parsed.waitForLoad(() => {
+              // pin
+              const cut = Cut(parsed);
+              cut.container = c;
+              data.cuts[ii] = cut;
+              count++;
+            });
+            setTimeout(parsed.stage.draw.bind(parsed.stage), 500);
           });
-          setTimeout(parsed.stage.draw.bind(parsed.stage), 500);
-        });
+      } else {
+        dist++;
+        c.className = 'taw-img';
+        data.cntr.appendChild(c);
+        const im = createElem('img');
+        im.src = data.baseUrl + e;
+        c.appendChild(im);
+      }
     });
     async function waitForLoad(cb) {
-      while (total != count) await sleep(50);
+      while (total != count + dist) await sleep(50);
       cb();
       redraw();
       initScrollBounds();
@@ -49,8 +58,12 @@ const TAW = (() => {
       const flow = d.flow;
       const redraw = () => stg.draw();
       let progress = 0;
+      let valid = false;
+      const isValid = () => valid = (lay.children[0].children.map(e => e.zIndex() == e.id() ? '' : ' ').join('').length == 0)
 
       function setProgress(p) {
+        if (!valid && !isValid())
+          lay.children[0].children.map(e => e.zIndex(parseInt(e.id().substr(1))))
         progress = p;
         return flow.map((fl) => {
           let from = p < fl.time[fl.index] ? 0 : fl.index;
@@ -86,7 +99,8 @@ const TAW = (() => {
         setProgress: setProgress,
         getProgress: getProgress,
         f: flow,
-        redraw: redraw
+        redraw: redraw,
+        stage: stg
       };
     })(d);
   };

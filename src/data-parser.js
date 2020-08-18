@@ -13,7 +13,7 @@ const parser = (() => {
       container: e,
       width: size.width,
       height: size.height,
-      scale: {x: scale, y: scale},
+      scale: { x: scale, y: scale },
       listening: false
     });
     const layer = new Konva.Layer();
@@ -23,6 +23,7 @@ const parser = (() => {
     map.map((o, i) => {
       Konva.Image.fromURL(data.url + o.path, (n) => {
         n.setAttrs(o.attrs);
+        n.id('i' + i);
         group.add(n);
         loaded++;
         return n;
@@ -32,7 +33,12 @@ const parser = (() => {
     stage.add(layer);
     const waitForLoad = async function (cb) {
       while (total != loaded) await sleep(50);
-      for (const f of flow) f.obj = findItem(layer, f.src);
+      for (const f of flow) {
+        const i = parseInt(f.src.substr(f.src.lastIndexOf('-') + 1));
+        f.obj = stage.find('#i' + i);
+        f.max = Math.min(f.time.length, f.data.length);
+
+      };
       cb({
         map: map,
         stage: stage,

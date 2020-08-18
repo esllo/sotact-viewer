@@ -1,0 +1,118 @@
+{
+  "map": [
+    {
+      "path": "cat_2/4e8183fm4-0.png",
+      "attrs": {
+        "x": 360,
+        "y": 255.5,
+        "width": 720,
+        "height": 511,
+        "visible": true,
+        "id": "",
+        "name": "배경",
+        "opacity": 1,
+        "scale": { "x": 1, "y": 1 },
+        "rotation": 0,
+        "offset": { "x": 360, "y": 255.5 }
+      }
+    },
+    {
+      "path": "cat_2/4e8183fm4-1.png",
+      "attrs": {
+        "x": 360,
+        "y": 255.5,
+        "width": 720,
+        "height": 511,
+        "visible": true,
+        "id": "",
+        "name": "얼굴색",
+        "opacity": 1,
+        "scale": { "x": 1, "y": 1 },
+        "rotation": 0,
+        "offset": { "x": 360, "y": 255.5 }
+      }
+    },
+    {
+      "path": "cat_2/4e8183fm4-2.png",
+      "attrs": {
+        "x": 360,
+        "y": 241,
+        "width": 428,
+        "height": 134,
+        "visible": true,
+        "id": "",
+        "name": "눈",
+        "opacity": 1,
+        "scale": { "x": 1, "y": 1 },
+        "rotation": 0,
+        "offset": { "x": 214, "y": 67 }
+      }
+    },
+    {
+      "path": "cat_2/4e8183fm4-3.png",
+      "attrs": {
+        "x": 360,
+        "y": 254,
+        "width": 312,
+        "height": 54,
+        "visible": true,
+        "id": "",
+        "name": "오뎅꼬치",
+        "opacity": 1,
+        "scale": { "x": 1, "y": 1 },
+        "rotation": 0,
+        "offset": { "x": 156, "y": 27 }
+      }
+    },
+    {
+      "path": "cat_2/4e8183fm4-4.png",
+      "attrs": {
+        "x": 363,
+        "y": 216,
+        "width": 554,
+        "height": 216,
+        "visible": true,
+        "id": "",
+        "name": "반짝이",
+        "opacity": 1,
+        "scale": { "x": 1, "y": 1 },
+        "rotation": 0,
+        "offset": { "x": 277, "y": 108 }
+      }
+    }
+  ],
+  "flow": [
+    {
+      "src": "layer-0-3",
+      "time": [0, 250, 601],
+      "data": [
+        { "x": 360, "y": 254, "rotation": 0, "opacity": 0 },
+        { "x": 360, "y": 254, "rotation": 0, "opacity": 0 },
+        { "x": 360, "y": 254, "rotation": 0, "opacity": 1 }
+      ],
+      "max": 3,
+      "index": 0,
+      "current": { "x": 360, "y": 254, "rotation": 0, "opacity": 0 }
+    },
+    {
+      "src": "layer-0-4",
+      "time": [0, 400, 403, 480, 560, 640, 720, 800, 880],
+      "data": [
+        { "x": 363, "y": 216, "rotation": 0, "opacity": 0 },
+        { "x": 363, "y": 216, "rotation": 0, "opacity": 0 },
+        { "x": 363, "y": 216, "rotation": 0, "opacity": 0.01 },
+        { "x": 363, "y": 216, "rotation": 0, "opacity": 1 },
+        { "x": 363, "y": 216, "rotation": 0, "opacity": 0 },
+        { "x": 363, "y": 216, "rotation": 0, "opacity": 1 },
+        { "x": 363, "y": 216, "rotation": 0, "opacity": 0 },
+        { "x": 363, "y": 216, "rotation": 0, "opacity": 1 },
+        { "x": 363, "y": 216, "rotation": 0, "opacity": 0 }
+      ],
+      "max": 9,
+      "index": 0,
+      "current": { "x": 363, "y": 216, "rotation": 0, "opacity": 0 }
+    }
+  ],
+  "size": { "width": 720, "height": 511 },
+  "name": "cat_2"
+}
