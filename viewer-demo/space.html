@@ -38,11 +38,12 @@
   <script src="../src/data-parser.js"></script>
   <script src="../src/lz-string.js"></script>
   <script src="../src/taw.js"></script>
+  <script src="../src/smoothscroll.js"></script>
   <script>
     TAW.container('#container');
     parser.baseUrl('../res/data/');
     let a = ['space_1/4e741fhs4-data.json', 'space_2/4e74296m8-data.json', 'space_3/4e742uoq8-data.json'];
-    TAW.baseUrl('http://59.7.180.135:5500/res/data/');
+    TAW.baseUrl('http://localhost:5500/res/data/');
     TAW.loadCuts(a).then(() => {
       console.log('all cuts loaded');
     });
