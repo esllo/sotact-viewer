@@ -1,8 +1,8 @@
-window.addEventListener('wheel', (e) => {
-    SS.scrollBy(e.deltaY);
-    console.log(e.deltaY);
-    e.preventDefault();
-});
+// window.addEventListener('wheel', (e) => {
+//     SS.scrollBy(e.deltaY);
+//     console.log(e.deltaY);
+//     e.preventDefault();
+// });
 
 const SS = (() => {
     const e = document.scrollingElement;
