@@ -5,5 +5,7 @@ stages:
 
 dev:
   stage: dev
+  tags:
+  - centos7
   script:
   - echo "nothing to build"
