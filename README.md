@@ -11,7 +11,7 @@
 
 ## Architecture
 
-![architecure](sotact-backend-architecure.png)
+![architecure](arch.png)
 
 
 ## Dependency
