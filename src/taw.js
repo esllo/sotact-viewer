@@ -77,10 +77,12 @@ const TAW = (() => {
           if (fl.index != fl.max - 1)
             for (const key of Object.keys(fl.data[fl.index])) {
               let value = fl.data[fl.index][key];
-              let diffs = fl.data[fl.index + 1][key] - fl.data[fl.index][key];
-              let dists = fl.time[fl.index + 1] - fl.time[fl.index];
-              let prgrs = p - fl.time[fl.index];
-              value += diffs * (prgrs / dists);
+              if (!(key == "globalCompositeOperation" || key == "visible")) {
+                let diffs = fl.data[fl.index + 1][key] - fl.data[fl.index][key];
+                let dists = fl.time[fl.index + 1] - fl.time[fl.index];
+                let prgrs = p - fl.time[fl.index];
+                value += diffs * (prgrs / dists);
+              }
               fl.obj[key](value);
             }
           else {
