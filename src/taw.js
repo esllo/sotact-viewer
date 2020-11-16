@@ -34,11 +34,21 @@ const TAW = (() => {
           });
       } else {
         dist++;
-        c.className = 'taw-img';
         data.cntr.appendChild(c);
-        const im = createElem('img');
-        im.src = data.baseUrl + e;
-        c.appendChild(im);
+        if (e.endsWith('.png')) {
+          c.className = 'taw-img';
+          const im = createElem('img');
+          im.src = data.baseUrl + e;
+          c.appendChild(im);
+        }
+        if (e.startsWith('placeholder/')) {
+          c.className = 'taw-box';
+          e = e.substr(12).split('x');
+          if (e.length == 2) {
+            c.style.width = parseInt(e[0]) + 'px';
+            c.style.height = parseInt(e[1]) + 'px';
+          }
+        }
       }
     });
     async function waitForLoad(cb) {
@@ -74,7 +84,7 @@ const TAW = (() => {
             fl.index++;
           }
           let f = {};
-          if (fl.index != fl.max - 1)
+          if (fl.index != fl.max - 1) {
             for (const key of Object.keys(fl.data[fl.index])) {
               let value = fl.data[fl.index][key];
               if (!(key == "globalCompositeOperation" || key == "visible")) {
@@ -85,7 +95,7 @@ const TAW = (() => {
               }
               fl.obj[key](value);
             }
-          else {
+          } else {
             for (const key of Object.keys(fl.data[fl.index])) {
               f[key] = fl.data[fl.index][key];
               fl.obj[key](fl.data[fl.index][key]);
@@ -131,11 +141,20 @@ const TAW = (() => {
     const f = window.scrollY;
     const h = window.innerHeight;
     const t = f + h;
-    conts.forEach(e => {
+    conts.forEach((e, i) => {
+      let offset = e.offsetHeight * 0.25;
       if (e.offsetTop < t && e.offsetTop + e.offsetHeight > f) {
-        const p = parseInt((t - e.offsetTop) / (h + e.offsetHeight) * 1000);
         const id = parseInt(e.id.substr(e.id.lastIndexOf('-') + 1));
+        let p = 0;
+        if (e.offsetTop > t - offset) {
+          p = 0;
+        } else if (e.offsetTop + e.offsetHeight < f + offset) {
+          p = 100;
+        } else {
+          p = (t - e.offsetTop - offset) / (h + e.offsetHeight - offset * 2) * 100;
+        }
         data.cuts[id].setProgress(p);
+        console.log(p);
       }
     });
   }

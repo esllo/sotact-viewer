@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .taw-cut {
+      width: 100%;
+    }
+
+    .taw-img,
+    .taw-img>img {
+      width: 100%;
+    }
+
+    #container {
+      width: 100%;
+    }
+
+    @media (min-width: 720px) {
+      #container {
+        width: 720px;
+        margin: 0 auto;
+      }
+    }
+
+    #sms {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 100px;
+      height: 50px;
+      display: flex;
+    }
+
+    #sms>p {
+      flex: 1;
+      border: 1px solid #333;
+      background: #999;
+      line-height: 50px;
+      text-align: center;
+      user-select: none;
+    }
+
+    #top {
+      transform: rotate(90deg);
+      border-top: none;
+    }
+
+    #bot {
+      transform: rotate(-90deg);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="log"></div>
+  <div id="webtoon_start"
+    style="width:100%; height: 100vh;display:flex;flex-direction:column;justify-content: center;align-items: center;">
+    <h2>제목 컷이 올 자리입니다.</h2>
+    <p>아래로 스크롤 하여 진행</p>
+  </div>
+  <div id="container"></div>
+  <div id="webtoon_start"
+    style="width:100%; height: 100vh;display:flex;flex-direction:column;justify-content: center;align-items: center;"
+    onclick="location.href='.'">
+    <h2>마지막 컷이 올 자리입니다.</h2>
+    <p>홈 화면으로</p>
+  </div>
+  <div id="sms">
+    <p id="top">&lt</p>
+    <p id="bot">&lt</p>
+  </div>
+  <script src="https://unpkg.com/konva@7.0.3/konva.min.js"></script>
+  <script src="../src/util.js"></script>
+  <script src="../src/data-parser.js"></script>
+  <script src="../src/lz-string.js"></script>
+  <script src="../src/taw.js"></script>
+  <script src="../src/smsc.js"></script>
+  <script src="../src/smoothscroll.js"></script>
+  <script>
+    TAW.container('#container');
+    parser.baseUrl('../res/data/');
+    let a = [
+      'coocat1/4muevjvm8-data.json',
+      // 'placeholder/720x400',
+      // 'coocat2/4muf068ko-data.json',
+      // 'placeholder/720x400',
+      // 'coocat3/4muf6dghg-data.json',
+      // 'placeholder/720x400',
+      // 'coocat4/4muf730r4-data.json',
+      // 'placeholder/720x400',
+      // 'coocat5/4muf7tru0-data.json',
+      // 'placeholder/720x400',
+      // 'coocat6/4muf8li48-data.json',
+      // 'placeholder/720x400',
+      // 'coocat7/4muf9enfk-data.json',
+    ];
+    TAW.baseUrl('../res/data/');
+    TAW.loadCuts(a).then(() => {
+      console.log('all cuts loaded');
+    });
+    document.getElementById('top').onclick = () => SS.scrollToTop();
+    document.getElementById('bot').onclick = () => SS.scrollToBottom();
+  </script>
+</body>
+
+</html>
