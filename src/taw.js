@@ -6,6 +6,24 @@ const TAW = (() => {
   const cuts = () => data.cuts;
   const redraw = () => data.cuts.map(e => e.redraw());
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+  const ratio = (() => {
+    var win = window,
+      doc = document,
+      docElem = doc.documentElement,
+      body = doc.getElementsByTagName('body')[0],
+      x = win.innerWidth || docElem.clientWidth || body.clientWidth,
+      y = win.innerHeight || docElem.clientHeight || body.clientHeight;
+    let rat = (x / y);
+    if (rat > 1.5) {
+      return 0.3;
+    } else if (rat > 1) {
+      return 0.35;
+    } else if (rat > 0.6) {
+      return 0.4;
+    } else {
+      return 0.45;
+    }
+  })();
 
   function loadCuts(list) {
     data.cuts = [];
@@ -142,7 +160,7 @@ const TAW = (() => {
     const h = window.innerHeight;
     const t = f + h;
     conts.forEach((e, i) => {
-      let offset = e.offsetHeight * 0.25;
+      let offset = e.offsetHeight * ratio + (e.offsetWidth / e.offsetHeight > 1.2 ? 0.2 : 0);
       if (e.offsetTop < t && e.offsetTop + e.offsetHeight > f) {
         const id = parseInt(e.id.substr(e.id.lastIndexOf('-') + 1));
         let p = 0;

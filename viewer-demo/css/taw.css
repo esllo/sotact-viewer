@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.taw-cut {
+  width: 100%;
+}
+
+.taw-box,
+.taw-img,
+.taw-img>img {
+  width: 100% !important;
+}
+
+#container {
+  width: 100%;
+}
+
+@media (min-width: 720px) {
+  #container {
+    width: 720px;
+    margin: 0 auto;
+  }
+}
+
+#sms {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 100px;
+  height: 50px;
+  display: flex;
+}
+
+#sms>p {
+  flex: 1;
+  border: 1px solid #333;
+  background: #999;
+  line-height: 50px;
+  text-align: center;
+  user-select: none;
+}
+
+#top {
+  transform: rotate(90deg);
+  border-top: none;
+}
+
+#bot {
+  transform: rotate(-90deg);
+}
