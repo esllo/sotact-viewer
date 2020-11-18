@@ -1,6 +1,9 @@
 window.addEventListener('wheel', (e) => {
   SS.offFlag();
 });
+window.addEventListener('touchmove', e => {
+  SS.offFlag();
+})
 
 const SS = (() => {
   const e = document.scrollingElement;
