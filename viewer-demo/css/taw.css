@@ -125,9 +125,9 @@
 
 @keyframes slide {
   from {
-    transform: translateY(100%) scale(0.5) translateZ(0);
+    transform: translateY(0%) scale(0.5) translateZ(0);
   }
   to {
-    transform: translateY(0%) scale(0.6) translateZ(0);
+    transform: translateY(100%) scale(0.6) translateZ(0);
   }
 }
