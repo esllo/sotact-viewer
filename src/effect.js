@@ -7,7 +7,7 @@ const Effect = (() => {
   document.scrollingElement.style.overflow='hidden';
 
   function _off() {
-    let dist = 1500;
+    let dist = 600;
     let tm = (new Date()).getTime() - time;
     setTimeout(off, tm < dist ? dist - tm : 10);
   }
