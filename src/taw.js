@@ -6,6 +6,24 @@ const TAW = (() => {
   const cuts = () => data.cuts;
   const redraw = () => data.cuts.map(e => e.redraw());
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+  const ratio = (() => {
+    var win = window,
+      doc = document,
+      docElem = doc.documentElement,
+      body = doc.getElementsByTagName('body')[0],
+      x = win.innerWidth || docElem.clientWidth || body.clientWidth,
+      y = win.innerHeight || docElem.clientHeight || body.clientHeight;
+    let rat = (x / y);
+    if (rat > 1.5) {
+      return 0.3;
+    } else if (rat > 1) {
+      return 0.35;
+    } else if (rat > 0.6) {
+      return 0.4;
+    } else {
+      return 0.45;
+    }
+  })();
 
   function loadCuts(list) {
     data.cuts = [];
@@ -34,11 +52,21 @@ const TAW = (() => {
           });
       } else {
         dist++;
-        c.className = 'taw-img';
         data.cntr.appendChild(c);
-        const im = createElem('img');
-        im.src = data.baseUrl + e;
-        c.appendChild(im);
+        if (e.endsWith('.png')) {
+          c.className = 'taw-img';
+          const im = createElem('img');
+          im.src = data.baseUrl + e;
+          c.appendChild(im);
+        }
+        if (e.startsWith('placeholder/')) {
+          c.className = 'taw-box';
+          e = e.substr(12).split('x');
+          if (e.length == 2) {
+            c.style.width = parseInt(e[0]) + 'px';
+            c.style.height = parseInt(e[1]) + 'px';
+          }
+        }
       }
     });
     async function waitForLoad(cb) {
@@ -74,16 +102,18 @@ const TAW = (() => {
             fl.index++;
           }
           let f = {};
-          if (fl.index != fl.max - 1)
+          if (fl.index != fl.max - 1) {
             for (const key of Object.keys(fl.data[fl.index])) {
               let value = fl.data[fl.index][key];
-              let diffs = fl.data[fl.index + 1][key] - fl.data[fl.index][key];
-              let dists = fl.time[fl.index + 1] - fl.time[fl.index];
-              let prgrs = p - fl.time[fl.index];
-              value += diffs * (prgrs / dists);
+              if (!(key == "globalCompositeOperation" || key == "visible")) {
+                let diffs = fl.data[fl.index + 1][key] - fl.data[fl.index][key];
+                let dists = fl.time[fl.index + 1] - fl.time[fl.index];
+                let prgrs = p - fl.time[fl.index];
+                value += diffs * (prgrs / dists);
+              }
               fl.obj[key](value);
             }
-          else {
+          } else {
             for (const key of Object.keys(fl.data[fl.index])) {
               f[key] = fl.data[fl.index][key];
               fl.obj[key](fl.data[fl.index][key]);
@@ -129,10 +159,18 @@ const TAW = (() => {
     const f = window.scrollY;
     const h = window.innerHeight;
     const t = f + h;
-    conts.forEach(e => {
+    conts.forEach((e, i) => {
+      let offset = e.offsetHeight * (ratio + (e.offsetWidth / e.offsetHeight > 1.2 ? 0.2 : 0));
       if (e.offsetTop < t && e.offsetTop + e.offsetHeight > f) {
-        const p = parseInt((t - e.offsetTop) / (h + e.offsetHeight) * 1000);
         const id = parseInt(e.id.substr(e.id.lastIndexOf('-') + 1));
+        let p = 0;
+        if (e.offsetTop > t - offset) {
+          p = 0;
+        } else if (e.offsetTop + e.offsetHeight < f + offset) {
+          p = 100;
+        } else {
+          p = (t - e.offsetTop - offset) / (h + e.offsetHeight - offset * 2) * 100;
+        }
         data.cuts[id].setProgress(p);
       }
     });

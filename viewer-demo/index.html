@@ -64,20 +64,23 @@
     </header>
 
     <style>
-      .fx{
-        display:flex;
+      .fx {
+        display: flex;
         justify-content: space-evenly;
       }
-      .fx > div{
+
+      .fx>div {
         flex: 1;
         text-align: center;
       }
-      @media (max-width: 720px){
-        .fx{
+
+      @media (max-width: 720px) {
+        .fx {
           flex-direction: column;
         }
       }
-      .fx > div > img{
+
+      .fx>div>img {
         width: 250px;
         border: 1px solid #333;
       }
@@ -88,19 +91,29 @@
         <div class="fx">
           <div class="cat">
             <img src="cat.png">
-            <p>Cat Demo</p>
+            <p>쿠킹캣</p>
           </div>
-          <div class="space">
-            <img src="space.png">
-            <p>Space Demo</p>
+          <div class="guide">
+            <img src="guide.png">
+            <p>토우 가이드</p>
+          </div>
+          <div class="soma">
+            <img src="soma.png">
+            <p>소마</p>
+          </div>
+          <div class="taw">
+            <img src="taw.png">
+            <p>토우</p>
           </div>
         </div>
       </div>
     </section>
 
     <script>
-      document.querySelector('.cat').onclick = () => location.href="cat.html";
-      document.querySelector('.space').onclick = () => location.href="space.html";
+      document.querySelector('img[src="cat.png"]').onclick = () => location.href = 'coocat.html';
+      document.querySelector('img[src="guide.png"]').onclick = () => location.href = 'guide.html';
+      document.querySelector('img[src="soma.png"]').onclick = () => location.href = 'soma.html';
+      document.querySelector('img[src="taw.png"]').onclick = () => location.href = 'taw.html';
     </script>
 
   </div>

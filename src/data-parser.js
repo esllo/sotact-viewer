@@ -24,6 +24,7 @@ const parser = (() => {
       Konva.Image.fromURL(data.url + o.path, (n) => {
         n.setAttrs(o.attrs);
         n.id('i' + i);
+        n.name(o.attrs.id);
         group.add(n);
         loaded++;
         return n;
@@ -35,7 +36,7 @@ const parser = (() => {
       while (total != loaded) await sleep(50);
       for (const f of flow) {
         const i = parseInt(f.src.substr(f.src.lastIndexOf('-') + 1));
-        f.obj = stage.find('#i' + i);
+        f.obj = stage.find('.' + f.src)[0];
         f.max = Math.min(f.time.length, f.data.length);
 
       };

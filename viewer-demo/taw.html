@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/taw.css" />
+</head>
+
+<body>
+  <div id="log"></div>
+  <div id="webtoon_start"
+    style="width:100%; height: 100vh;display:flex;flex-direction:column;justify-content: center;align-items: center;">
+    <img src="image/top.png" style="width:100%;max-width:720px;">
+    <p>이 페이지는 4K 이미지로 제작되어 로딩이 느릴 수 있습니다.</p>
+  </div>
+  <div id="container"></div>
+  <div id="webtoon_start"
+    style="width:100%; height: 100vh;display:flex;flex-direction:column;justify-content: center;align-items: center;"
+    onclick="location.href='./'">
+    <img src="image/bot.png" style="width:100%;max-width:720px;">
+    <p>홈 화면으로</p>
+  </div>
+  <div id="sms">
+    <!-- <p id="top">&lt</p> -->
+    <p id="bot">&lt</p>
+  </div>
+  <div class="effect_wrap">
+    <div id="load">
+      <img id="pulse" src="image/pulse.svg">
+    </div>
+    <div id="arrow">
+      <div class="arrow"></div>
+      <div class="arrow"></div>
+      <div class="arrow"></div>
+    </div>
+  </div>
+  <script src="https://unpkg.com/konva@7.0.3/konva.min.js"></script>
+  <script src="../src/util.js"></script>
+  <script src="../src/data-parser.js"></script>
+  <script src="../src/lz-string.js"></script>
+  <script src="../src/taw.js"></script>
+  <script src="../src/smsc.js"></script>
+  <script src="../src/smoothscroll.js"></script>
+  <script src="../src/effect.js"></script>
+  <script>
+    TAW.container('#container');
+    parser.baseUrl('../res/data/');
+    let a = [
+      'taw1/4mufs11dg-data.json',
+      'placeholder/720x400',
+      'taw2/4mufsqbs4-data.json',
+      'placeholder/720x400',
+      'taw3/d8mam017v-data.json',
+      'placeholder/720x400',
+      'taw4/4mug5g8e0-data.json',
+      'placeholder/720x400',
+      'taw5/4mug65m9k-data.json',
+      'placeholder/720x400',
+      'taw6/4mug6hf7k-data.json',
+      'placeholder/720x400',
+      'taw7/4mugamrdg-data.json',
+      'placeholder/720x400',
+      'taw8/4mugb1ec0-data.json',
+      'placeholder/720x400',
+      'taw9/4mugbil70-data.json'
+    ];
+    TAW.baseUrl('../res/data/');
+    TAW.loadCuts(a).then(() => {
+      console.log('all cuts loaded');
+      Effect.off();
+    });
+    document.getElementById('bot').onclick = () => SS.scrollToBottom();
+  </script>
+</body>
+
+</html>
