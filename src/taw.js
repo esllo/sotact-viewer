@@ -160,7 +160,7 @@ const TAW = (() => {
     const h = window.innerHeight;
     const t = f + h;
     conts.forEach((e, i) => {
-      let offset = e.offsetHeight * ratio + (e.offsetWidth / e.offsetHeight > 1.2 ? 0.2 : 0);
+      let offset = e.offsetHeight * (ratio + (e.offsetWidth / e.offsetHeight > 1.2 ? 0.2 : 0));
       if (e.offsetTop < t && e.offsetTop + e.offsetHeight > f) {
         const id = parseInt(e.id.substr(e.id.lastIndexOf('-') + 1));
         let p = 0;

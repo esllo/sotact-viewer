@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/taw.css" />
+</head>
+
+<body>
+  <div id="log"></div>
+  <div id="webtoon_start"
+    style="width:100%; height: 100vh;display:flex;flex-direction:column;justify-content: center;align-items: center;">
+    <h2>소마 소개</h2>
+    <p>아래로 스크롤 하세요</p>
+  </div>
+  <div id="container"></div>
+  <div id="webtoon_start"
+    style="width:100%; height: 100vh;display:flex;flex-direction:column;justify-content: center;align-items: center;"
+    onclick="location.href='./'">
+    <h2></h2>
+    <p>홈 화면으로</p>
+  </div>
+  <div id="sms">
+    <p id="top">&lt</p>
+    <p id="bot">&lt</p>
+  </div>
+  <script src="https://unpkg.com/konva@7.0.3/konva.min.js"></script>
+  <script src="../src/util.js"></script>
+  <script src="../src/data-parser.js"></script>
+  <script src="../src/lz-string.js"></script>
+  <script src="../src/taw.js"></script>
+  <script src="../src/smsc.js"></script>
+  <script src="../src/smoothscroll.js"></script>
+  <script>
+    TAW.container('#container');
+    parser.baseUrl('../res/data/');
+    let a = [
+      'soma1/d8man2gmd-data.json',
+      'placeholder/720x400',
+      'soma2/4mugcrktc-data.json',
+      'placeholder/720x400',
+      'soma3/4mugdcl10-data.json',
+      'placeholder/720x400',
+      'soma4/4n0bgh0bk-data.json',
+      'placeholder/720x400',
+      'soma5/4n0bl3770-data.json',
+      'placeholder/720x400',
+      'soma6/4n0blooig-data.json',
+      'placeholder/720x400',
+      'soma7/4n0bm25s0-data.json',
+      'placeholder/720x400',
+      'soma8/4n0bmjtc4-data.json',
+      'placeholder/720x400',
+      'soma9/4n0bn39go-data.json',
+      'placeholder/720x400',
+      'soma10/4n0bncmho-data.json',
+    ];
+    TAW.baseUrl('../res/data/');
+    TAW.loadCuts(a).then(() => {
+      console.log('all cuts loaded');
+    });
+    document.getElementById('top').onclick = () => SS.scrollToTop();
+    document.getElementById('bot').onclick = () => sc.scroll();
+
+    const sc = (() => {
+      let o = document.scrollingElement;
+      let h = window.innerHeight;
+      let t = document.body.offsetHeight - h;
+      let i = o.scrollTop;
+      function func() {
+        i += 4;
+        o.scrollTop = i;
+        console.log(o.scrollTop + '/' + t);
+        if (o.scrollTop < document.body.offsetHeight - h) requestAnimationFrame(func);
+      }
+      function scroll() {
+        requestAnimationFrame(func);
+      }
+      return { scroll: scroll };
+    })();
+  </script>
+</body>
+
+</html>
