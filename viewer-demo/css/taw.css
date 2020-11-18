@@ -17,10 +17,23 @@
   width: 100%;
 }
 
+#info {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  max-height: 440px;
+}
+
 @media (min-width: 720px) {
   #container {
     width: 720px;
     margin: 0 auto;
+  }
+  #info {
+    width: auto;
+    margin: 0 auto;
+    left: 50%;
+    transform: translate(-50%);
   }
 }
 
@@ -35,8 +48,8 @@
 }
 
 #sms > p {
-  width:50px;
-  height:50px;
+  width: 50px;
+  height: 50px;
   border: 1px solid #333;
   background: #999;
   line-height: 50px;
@@ -66,10 +79,10 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  transition: all .7s;
+  transition: all 0.7s;
 }
 
-.none{
+.none {
   opacity: 0;
 }
 
@@ -80,18 +93,18 @@
 
 #load.off {
   opacity: 0;
-  transform: scale(.5);
+  transform: scale(0.5);
 }
 
-#load.dismount{
-  display:none;
+#load.dismount {
+  display: none;
 }
 
 #arrow {
-  display:none;
+  display: none;
   opacity: 0;
-  transition: all .7s;
-  transform: scale(.3);
+  transition: all 0.7s;
+  transform: scale(0.3);
 }
 #arrow.on {
   opacity: 1;

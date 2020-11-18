@@ -42,7 +42,6 @@ const SS = (() => {
   function func() {
     i += 4;
     o.scrollTop = i;
-    console.log(o.scrollTop + '/' + t);
     if (o.scrollTop < document.body.offsetHeight - h && !offFlag) requestAnimationFrame(func);
   }
   function scroll() {
@@ -64,7 +63,6 @@ const SS = (() => {
       dst = maxHeight();
     ld = lpd;
     time = Math.abs(dst - src) / 100 * 250;
-    console.log(src + "/" + dst + "/" + time);
     if (!run)
       requestStep();
   };
