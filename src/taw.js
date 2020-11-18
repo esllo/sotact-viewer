@@ -172,7 +172,6 @@ const TAW = (() => {
           p = (t - e.offsetTop - offset) / (h + e.offsetHeight - offset * 2) * 100;
         }
         data.cuts[id].setProgress(p);
-        console.log(p);
       }
     });
   }
